@@ -17,28 +17,8 @@ type Props = {
   };
 };
 
-function getBaseUrl() {
-  if (typeof window !== "undefined") {
-    return "";
-  }
-
-  console.log("VERCEL URL -->> ", process.env.VERCEL_PRODUCTION_URL);
-
-  // Production Vercel deployment domain
-  if (
-    process.env.VERCEL_PRODUCTION_URL &&
-    process.env.PRODUCTION_ENVIRONMENT === "true"
-  ) {
-    return `${process.env.VERCEL_PRODUCTION_URL}`;
-  }
-
-  // Local development fallback
-  return process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
-}
-
 async function getOffers(queryString: string) {
-  const baseUrl = getBaseUrl();
-  console.log("Base url --->> ", baseUrl);
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
   const res = await fetch(`${baseUrl}/api/offers?${queryString}`, {
     cache: "no-store",
   });
