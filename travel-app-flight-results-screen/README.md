@@ -45,8 +45,8 @@ Open http://localhost:3000
   All states are controlled by the simulate query parameter.
 
   - Normal       - "http://localhost:3000/air/search?from=KHI&to=DXB&date=2026-11-15&adults=1"
-  - slow         - "http://localhost:3000/air/search?from=KHI&to=DXB&date=2026-11-15&adults=1"
-  - empty        - "http://localhost:3000/air/search?from=KHI&to=DXB&date=2026-11-15&adults=1&simulate=slow"
+  - slow         - "http://localhost:3000/air/search?from=KHI&to=DXB&date=2026-11-15&adults=1&simulate=slow"
+  - empty        - "http://localhost:3000/air/search?from=KHI&to=DXB&date=2026-11-15&adults=1&simulate=empty"
   - error (503)  - "http://localhost:3000/air/search?from=KHI&to=DXB&date=2026-11-15&adults=1&simulate=error"
   - partial      - "http://localhost:3000/air/search?from=KHI&to=DXB&date=2026-11-15&adults=1&simulate=partial"
 
